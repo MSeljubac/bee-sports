@@ -1,10 +1,10 @@
 package io.beesports.domain.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
 import java.util.Date;
 import java.util.UUID;
 
@@ -33,7 +33,7 @@ public class Article {
 
     @Column(length = 5000)
     private String imageUrl;
-    
+
     @Column(length = 5000)
     private String imageAttribution;
 

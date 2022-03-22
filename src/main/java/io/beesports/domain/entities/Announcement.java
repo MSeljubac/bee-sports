@@ -3,7 +3,7 @@ package io.beesports.domain.entities;
 import io.beesports.domain.enums.AnnouncementType;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 

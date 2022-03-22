@@ -2,8 +2,8 @@ package io.beesports.domain.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.Date;
 import java.util.UUID;
 

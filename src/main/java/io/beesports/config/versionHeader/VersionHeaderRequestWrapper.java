@@ -1,9 +1,8 @@
 package io.beesports.config.versionHeader;
 
 import io.beesports.config.ConfigConsts;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequestWrapper;
 
 public class VersionHeaderRequestWrapper extends HttpServletRequestWrapper {
     /**

@@ -4,7 +4,7 @@ package io.beesports.domain.dtos;
 import io.beesports.domain.entities.*;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 

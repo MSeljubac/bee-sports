@@ -1,15 +1,10 @@
 package io.beesports.domain.dtos.responses;
 
-import com.google.gson.annotations.SerializedName;
-import io.beesports.domain.entities.Tournament;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.util.Date;
-import java.util.List;
 
 @Getter
 @Setter

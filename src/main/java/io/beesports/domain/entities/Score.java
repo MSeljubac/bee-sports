@@ -1,11 +1,10 @@
 package io.beesports.domain.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity

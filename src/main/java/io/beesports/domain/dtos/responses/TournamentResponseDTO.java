@@ -1,12 +1,9 @@
 package io.beesports.domain.dtos.responses;
 
-import com.google.gson.annotations.SerializedName;
-import io.beesports.domain.entities.League;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.*;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Getter

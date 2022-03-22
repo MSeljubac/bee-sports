@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -86,8 +87,13 @@ public class MatchMapper {
         matchDetailsResponseDTO.setTournamentName(match.getTournament().getName());
         matchDetailsResponseDTO.setTeamOneImageUrl(match.getOpponents().get(0).getImageUrl());
         matchDetailsResponseDTO.setTeamTwoImageUrl(match.getOpponents().get(1).getImageUrl());
-        matchDetailsResponseDTO.setTeamOneScore(match.getResults().stream().filter(score -> score.getTeamId().equals(match.getOpponents().get(0).getId())).findFirst().get().getScore());
-        matchDetailsResponseDTO.setTeamTwoScore(match.getResults().stream().filter(score -> score.getTeamId().equals(match.getOpponents().get(1).getId())).findFirst().get().getScore());
+
+        Optional<Score> scoreOne = match.getResults().stream().filter(score -> score.getTeamId().equals(match.getOpponents().get(0).getId())).findFirst();
+        matchDetailsResponseDTO.setTeamOneScore(scoreOne.map(Score::getScore).orElse(null));
+
+        Optional<Score> scoreTwo = match.getResults().stream().filter(score -> score.getTeamId().equals(match.getOpponents().get(1).getId())).findFirst();
+        matchDetailsResponseDTO.setTeamTwoScore(scoreTwo.map(Score::getScore).orElse(null));
+
         matchDetailsResponseDTO.setLiveUrl(match.getLiveUrl());
 
         List<MatchDetailsPlayerStatsDTO> matchDetailsPlayerStatsDTOS = new ArrayList<>();
