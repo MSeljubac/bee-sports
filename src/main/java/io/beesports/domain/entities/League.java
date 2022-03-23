@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
@@ -23,8 +21,5 @@ public class League {
 
     @Column(length = 2000)
     private String name;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Serie> series;
 
 }

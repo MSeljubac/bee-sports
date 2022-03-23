@@ -48,14 +48,8 @@ public class Match {
     @ManyToMany(cascade = CascadeType.ALL, targetEntity = Team.class)
     private List<Team> opponents;
 
-    @ManyToOne(cascade = CascadeType.ALL, targetEntity = Serie.class, fetch = FetchType.EAGER)
-    private Serie serie;
-
     @OneToMany
     private List<Score> results;
-
-    @ManyToOne(cascade = CascadeType.ALL, targetEntity = Tournament.class, fetch = FetchType.EAGER)
-    private Tournament tournament;
 
     @Column(length = 2000)
     private String status;

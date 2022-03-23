@@ -1,11 +1,13 @@
 package io.beesports.endpoints;
 
-import io.beesports.config.ConfigConsts;
 import io.beesports.domain.dtos.responses.PlayerResponseDTO;
 import io.beesports.services.PlayerService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -21,16 +23,14 @@ public class PlayerEndpoint {
     }
 
     @Operation(summary = "Gets player data from player ID.")
-    @GetMapping(value = "/{playerId}", headers = "Accept-version=" + ConfigConsts.LATEST_ACCEPT_VERSION)
-    public PlayerResponseDTO getPlayerDetails(@RequestHeader(value = "Accept-version", defaultValue = ConfigConsts.DEFAULT_ACCEPT_VERSION, required = false) String acceptVersion,
-                                              @PathVariable("playerId") Integer playerId) {
+    @GetMapping(value = "/{playerId}")
+    public PlayerResponseDTO getPlayerDetails(@PathVariable("playerId") Integer playerId) {
         return playerService.getPlayerDetails(playerId);
     }
 
     @Operation(summary = "Gets all the Players playing in a Team.")
-    @GetMapping(value = "/team/{teamId}", headers = "Accept-version=" + ConfigConsts.LATEST_ACCEPT_VERSION)
-    public List<PlayerResponseDTO> getPlayersByTeam(@RequestHeader(value = "Accept-version", defaultValue = ConfigConsts.DEFAULT_ACCEPT_VERSION, required = false) String acceptVersion,
-                                                    @PathVariable("teamId") Integer teamId) {
+    @GetMapping(value = "/team/{teamId}")
+    public List<PlayerResponseDTO> getPlayersByTeam(@PathVariable("teamId") Integer teamId) {
         return playerService.getTeamPlayers(teamId);
     }
 

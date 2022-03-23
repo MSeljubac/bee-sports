@@ -1,10 +1,9 @@
 package io.beesports.domain.dtos;
 
 
-import io.beesports.domain.entities.*;
+import io.beesports.domain.entities.League;
 import lombok.*;
 
-import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -33,13 +32,9 @@ public class MatchDTO {
 
     private List<OpponentsDTO> opponents;
 
-    private Serie serie;
-
     private Integer serie_id;
 
     private List<ScoreDTO> results;
-
-    private Tournament tournament;
 
     private Integer tournament_id;
 
